@@ -7,7 +7,28 @@ public class Randomele {
 
     public static void main(String args[])
     {
-        int a[]={1,4,2,3,6,5,10,9,8,7};
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter values from 1 to 10:");
+        int a[]=new int[10];
+        for(int i=0;i<10;i++)
+        {
+            try {
+                a[i] = sc.nextInt();
+            }catch(Exception e){
+                System.out.println(e);
+                System.exit(0);
+        }
+            if(a[i]>=1||a[i]<10)
+            {
+                continue;
+            }
+            else {
+                System.out.println("Entered wrong number.");
+                System.exit(0);
+            }
+
+        }
+        int sum1=Arrays.stream(a).sum();
         int r=new Random().nextInt(a.length);
 
         System.out.println("The array after replacing random element with 0:");
@@ -17,17 +38,9 @@ public class Randomele {
                 a[k]=0;
             System.out.print(a[k]+" ");
         }
-        HashMap<Integer,Integer> h = new HashMap<>();
-        for(int i=0;i<10;i++) {
-            h.put(a[i], a[i]);
-        }
-
-        for(int i=1;i<=10;i++)
-        {
-            if(!h.containsKey(i)){
-                System.out.println("\nMissing element is:"+i);
-                break;
+        int sum2=Arrays.stream(a).sum();
+                System.out.println("\nMissing element is:"+(sum1-sum2));
             }
         }
-    }
-}
+
+
