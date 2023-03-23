@@ -6,7 +6,7 @@ public class Main {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the string:");
         String st=sc.nextLine();
-        StringBuffer sb=new StringBuffer(st);
+        StringBuilder sb=new StringBuilder(st);
         sb.reverse();
         System.out.println("Reversed string is:\n"+sb);
     }

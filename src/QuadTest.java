@@ -11,8 +11,7 @@ class Quadrilateral {
         this.l=l;
         this.b = b;
     }
-    Quadrilateral(){
-    }
+
     void display()
     {
         System.out.println("Displaying dimensions of rectangle:\nLength is "+ l + " and breadth is "+b);
@@ -34,21 +33,23 @@ class Rectangle extends Quadrilateral
     }
 }
 
-class Cube extends Quadrilateral
+class Cuboid extends Quadrilateral
 {
-    double r;
-    Cube(double r){
-
-        this.r=r;
+    int h;
+    Cuboid(int l,int b,int h){
+        super(l,b);
+        this.h=h;
     }
-    double volume()
+    int volume()
     {
-        return 3.14*r*r*r;
+        return (l*b*h);
     }
 
     void display()
     {
-        System.out.println("Radius of cube is:"+r);
+        System.out.println("Length of cube is:"+l);
+        System.out.println("Breadth of cube is:"+b);
+        System.out.println("Height of cube is:"+h);
     }
 }
 
@@ -57,8 +58,8 @@ public class QuadTest{
     {
         Rectangle r1=new Rectangle(10,20);
         Rectangle r2=new Rectangle(10,12);
-        Cube c1=new Cube(10);
-        Cube c2=new Cube(10);
+        Cuboid c1=new Cuboid(10,20,30);
+        Cuboid c2=new Cuboid(10,20,30);
         r1.display();
         r2.display();
         System.out.println("Area of r1 is:"+r1.area());

@@ -3,12 +3,17 @@
 import java.util.*;
 public class Rev2 {
 
-    void reverse(String s)
+    static String reverse(String s)
     {
-        for(int i=s.length()-1;i>=0;i--)
+        char ch[]=s.toCharArray();
+        char temp;
+        for(int i=0;i<s.length()/2;i++)
         {
-            System.out.print(s.charAt(i));
+            temp=ch[i];
+            ch[i]=ch[s.length()-i-1];
+            ch[s.length()-1-i]=temp;
         }
+        return String.valueOf(ch);
     }
 
     public static void main(String args[])
@@ -17,7 +22,7 @@ public class Rev2 {
         System.out.println("Enter the string:");
         String s=sc.nextLine();
         System.out.println("Reversed string is:");
-        Rev2 obj=new Rev2();
-        obj.reverse(s);
+        String s2=reverse(s);
+        System.out.println(s2);
     }
 }

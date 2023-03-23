@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Palindrome {
 
-    boolean palin(int num)
+    static boolean palin(int num)
     {
         int rev=0;
         int temp=num;
@@ -15,18 +15,14 @@ public class Palindrome {
             temp=temp/10;
         }
 
-        if(rev==num)
-            return true;
-        else
-            return false;
+        return rev == num;
     }
     public static void main(String args[])
     {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter any number:");
         int num=sc.nextInt();
-        Palindrome obj=new Palindrome();
-        if(obj.palin(num))
+        if(Palindrome.palin(num))
             System.out.println("Number is palindrome");
         else
             System.out.println("Number is not palindrome");
